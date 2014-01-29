@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+var
+    program = require('commander'),
+    beautify = require('../lib/node-website-copier').beautify,
+    filename;
+
+program
+  .version('0.0.1')
+  .usage('[options] <filename ...>')
+  .option('--verbose', 'Displays debug info')
+  .parse(process.argv);
+
+// Read url from params
+filename = program.args[0];
+if (!filename) program.help();
+
+beautify(filename, program.verbose);

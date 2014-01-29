@@ -20,26 +20,28 @@ You can clone this repo, and use [npm link](https://npmjs.org/doc/cli/npm-link.h
 ## Getting Started
 Install the module with: `npm install node-website-copier`
 
+## Documentation
+_(Coming soon)_
+
+## Examples
+
 ```javascript
-var node_website_copier = require('node-website-copier');
-node_website_copier.download("URL", [(boolean) verbose]);
+var pkg = require('node-website-copier');
+pkg.download("URL", [(boolean) verbose]); // to download site and beautify html
+pkg.beautify("Filename", [(boolean) verbose]); // to beautify html file
 ```
 
 ```cli
-./node_modules/node-website-copier/bin/wwwcopy URL [--verbose]
+./node_modules/node-website-copier/bin/www-download URL [--verbose]
+./node_modules/node-website-copier/bin/www-beautify FILE [--verbose]
 ```
 
 Install the module with `npm install -g node-website-copier`
 
 ```cli
-wwwcopy URL [--verbose]
+www-download URL [--verbose]
+www-beautify FILE [--verbose]
 ```
-
-## Documentation
-_(Coming soon)_
-
-## Examples
-_(Coming soon)_
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).

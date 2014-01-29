@@ -2,7 +2,7 @@
 
 var
     program = require('commander'),
-    wwwcopy = require('../lib/node-website-copier'),
+    download = require('../lib/node-website-copier').download,
     url;
 
 program
@@ -15,4 +15,8 @@ program
 url = program.args[0];
 if (!url) program.help();
 
-wwwcopy.download(url, program.verbose);
+try {
+    download(url, program.verbose);
+} catch(e) {
+    console.log(e);
+}
