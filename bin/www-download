@@ -9,6 +9,7 @@ program
   .version('0.0.1')
   .usage('[options] <URL...>')
   .option('--verbose', 'Displays debug info')
+  .option('--mobile', 'Fetch as mobile device')
   .parse(process.argv);
 
 // Read url from params
@@ -16,7 +17,7 @@ url = program.args[0];
 if (!url) program.help();
 
 try {
-    download(url, program.verbose);
+    download(url, program);
 } catch(e) {
     console.log(e);
 }
